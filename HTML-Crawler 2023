@@ -1,5 +1,6 @@
 import bs4
 from bs4 import BeautifulSoup
+import requests
 import lxml
 
 print("HTML Crawler 2023")
@@ -7,7 +8,7 @@ print("HTML Crawler 2023")
 while True:
     print("==================")
     inp = input("?: ")
-    if inp=="find":
+    if inp=="offline":
         cb=input("file: ")
         try:
             cc = open(cb, "r")
@@ -17,6 +18,15 @@ while True:
         soup = BeautifulSoup(cc, 'lxml')
         ce = soup.find_all(cd)
         print(ce)
+    elif inp=="online":
+        ab=input("link: ")
+        req=requests.get("https://" + ab)
+        ae = req.text
+        soup = BeautifulSoup(ae, 'lxml')
+        ac = input("find: ")
+        ad = soup.find_all(ac)
+        print(ad)
     elif inp=="help":
-        print("find - find a specific HTML-tag in WEoutput.txt")
+        print("Offline - find a specific HTML-tag in WEoutput.txt locally || Online - find a specific HTML-tag online")
+    
 pass
