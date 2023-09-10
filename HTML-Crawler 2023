@@ -30,6 +30,6 @@ while True:
         except:
             print("Input valid link")
     elif inp=="help":
-        print("Offline - find a specific HTML-tag in WEoutput.txt locally || Online - find a specific HTML-tag online")
+        print("Offline - find a specific HTML-tag in a text file locally || Online - find a specific HTML-tag online")
     
 pass
