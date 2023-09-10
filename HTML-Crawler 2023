@@ -1,0 +1,22 @@
+import bs4
+from bs4 import BeautifulSoup
+import lxml
+
+print("HTML Crawler 2023")
+
+while True:
+    print("==================")
+    inp = input("?: ")
+    if inp=="find":
+        cb=input("file: ")
+        try:
+            cc = open(cb, "r")
+        except:
+            print("Input valid file")
+        cd = input("find: ")
+        soup = BeautifulSoup(cc, 'lxml')
+        ce = soup.find_all(cd)
+        print(ce)
+    elif inp=="help":
+        print("find - find a specific HTML-tag in WEoutput.txt")
+pass
