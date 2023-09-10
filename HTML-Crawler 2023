@@ -12,12 +12,12 @@ while True:
         cb=input("file: ")
         try:
             cc = open(cb, "r")
+            cd = input("find: ")
+            soup = BeautifulSoup(cc, 'lxml')
+            ce = soup.find_all(cd)
+            print(ce)
         except:
             print("Input valid file")
-        cd = input("find: ")
-        soup = BeautifulSoup(cc, 'lxml')
-        ce = soup.find_all(cd)
-        print(ce)
     elif inp=="online":
         ab=input("link: ")
         try:
